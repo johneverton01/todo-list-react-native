@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import { StyleSheet, View } from 'react-native';
+import React, {useState} from 'react';
+import {StyleSheet, View} from 'react-native';
 
-import { Header } from '../components/Header';
-import { Task, TasksList } from '../components/TasksList';
-import { TodoInput } from '../components/TodoInput';
+import {Header} from '../components/Header';
+import {Task, TasksList} from '../components/TasksList';
+import {TodoInput} from '../components/TodoInput';
 
 export function Home() {
   const [tasks, setTasks] = useState<Task[]>([]);
@@ -12,17 +12,16 @@ export function Home() {
     const taskObj: Task = {
       id: new Date().getTime(),
       title: newTaskTitle,
-      done: false
+      done: false,
     };
     setTasks([...tasks, taskObj]);
   }
 
   function handleToggleTaskDone(id: number) {
-    
     const changeTaskToDone = tasks.map((task: Task) => {
       if (task.id === id) {
         const taskDone = true;
-        return {...task, done: taskDone}
+        return {...task, done: taskDone};
       } else {
         return task;
       }

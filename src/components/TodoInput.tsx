@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
-import { StyleSheet, TextInput, TouchableOpacity, View } from 'react-native';
+import React, {useState} from 'react';
+import {StyleSheet, TextInput, TouchableOpacity, View} from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
 
 interface TodoInputProps {
   addTask: (task: string) => void;
 }
 
-export function TodoInput({ addTask }: TodoInputProps) {
+export function TodoInput({addTask}: TodoInputProps) {
   const [task, setTask] = useState('');
 
   function handleAddNewTask() {
@@ -18,8 +18,8 @@ export function TodoInput({ addTask }: TodoInputProps) {
 
   return (
     <View style={styles.inputContainer}>
-      <TextInput 
-        style={styles.input} 
+      <TextInput
+        style={styles.input}
         placeholder="Adicionar novo todo..."
         placeholderTextColor="#B2B2B2"
         returnKeyType="send"
@@ -33,12 +33,11 @@ export function TodoInput({ addTask }: TodoInputProps) {
         activeOpacity={0.7}
         style={styles.addButton}
         onPress={handleAddNewTask}
-        disabled={!(task.trim().length > 0)}
-      >
+        disabled={!(task.trim().length > 0)}>
         <Icon name="chevron-right" size={24} color="#B2B2B2" />
       </TouchableOpacity>
     </View>
-  )
+  );
 }
 
 const styles = StyleSheet.create({
@@ -59,7 +58,7 @@ const styles = StyleSheet.create({
     borderBottomLeftRadius: 5,
     borderRightWidth: 1,
     borderRightColor: '#EBEBEB',
-    color: '#666666'
+    color: '#666666',
   },
   addButton: {
     backgroundColor: '#FFF',
